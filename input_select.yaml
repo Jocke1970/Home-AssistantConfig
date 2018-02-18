@@ -1,0 +1,9 @@
+state:
+  name: State
+  options:
+   - Home
+   - Away
+   - Sleeping
+   - Vacation
+  initial: Home
+  icon: mdi:home

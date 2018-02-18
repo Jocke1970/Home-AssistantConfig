@@ -1,0 +1,290 @@
+default_view:
+  view: true
+  entities:
+  - sensor.season
+#  - weblink.router
+  - binary_sensor.workday_sensor
+  - sun.sun
+  - sensor.total_energy
+  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_temperature
+  - binary_sensor.fibaro_system_fgdw002_door_opening_sensor_2_sensor
+  - binary_sensor.door_sensor_2_sensor
+  - sensor.door_sensor_2_temperature
+  - sensor.connected_clients
+  - sensor.moon
+  - sensor.stockholm_temperature
+  - sensor.hue_entre_temp
+  - sensor.hue_entre_light
+  - sensor.hue_kitchen_temp
+  - sensor.hue_kitchen_light
+  - device_tracker.8c7967a52ffb
+  - device_tracker.dc415f2153b3
+  - binary_sensor.multisensor_6_sensor
+  - binary_sensor.fibaro_eye_sensor
+  - sensor.sofo__budcompaniett
+  - sensor.sofo__budcompaniett_by_cycle
+  - sensor.multisensor_6_luminance
+  - sensor.fibaro_eye_luminance
+  - sensor.multisensor_6_temperature
+  - sensor.fibaro_eye_temperature
+  - sensor.fibaro_eye_seismic_intensity
+#  - camera.test
+  - media_player.lg_55ea970w
+#  - media_player.kodi
+  - media_player.sofo
+#  - media_player.mpd
+  - media_player.raspberry_pi
+#  - group.devices
+  - group.lights
+  - sensor.nearby
+  - sensor.city
+  - sensor.sthlm
+  - group.snmp
+#  - group.upnp
+  - group.wallplugs
+  - input_select.state
+#  - group.mqtt
+#  - plant.paradistrad_crassula_ovata
+#  - plant.the_other_one_celosia_caracas
+  - switch.magicmirror_on_off
+  - sensor.entre_motion_sensor
+  - sensor.kitchen_motion_sensor
+  name: default_view
+
+air:
+  name: WAQI
+  view: true
+  entities:
+  - sensor.waqi_stockholm_hornsgatan_sweden
+  - sensor.waqi_stockholm_lilla_essingen_sweden
+  - sensor.waqi_stockholm_norrlandsg_sweden
+  - sensor.waqi_stockholm_sodermalm_sweden
+  - sensor.waqi_stockholm_sveavagen_sweden
+  - sensor.us_air_quality_index
+  - sensor.us_main_pollutant
+  - sensor.us_air_pollution_level
+weather:
+  name: Weather
+  view: true
+  entities:
+  - sensor.stockholm_temperature
+  - sensor.stockholm_dewpoint_temperature
+  - sensor.stockholm_cloudiness
+  - sensor.stockholm_high_clouds
+  - sensor.stockholm_medium_clouds
+  - sensor.stockholm_low_clouds
+  - sensor.stockholm_fog
+  - sensor.stockholm_humidity
+  - sensor.stockholm_precipitation
+  - sensor.stockholm_pressure
+  - sensor.stockholm_wind_direction
+  - sensor.stockholm_wind_speed
+  - sensor.dark_sky_daily_high_apparent_temperature
+  - sensor.dark_sky_daily_high_temperature
+  - sensor.dark_sky_high_temperature
+  - sensor.dark_sky_daily_low_apparent_temperature
+  - sensor.dark_sky_daily_low_temperature
+  - sensor.dark_sky_ozone
+  - sensor.dark_sky_summary
+
+automations:
+  name: Automations
+  view: true
+  entities:
+#  - automation.flux_off_automatic
+#  - automation.tv_light_on_sunset
+#  - automation.opensky_entry_sthlm
+#  - automation.opensky_entry_nearby
+#  - automation.opensky_entry_city
+#  - automation.close
+#  - automation.sthlm
+#  - automation.tv_light_off_
+#  - automation.tv_light_on_sunset
+#  - automation.automatic_theme_change
+#  - automation.change_state_from_sleeping
+#  - automation.change_state_when_arriving_home
+#  - automation.turn_on_rooflamp_when_when_precens_detected_and_dark
+#  - automation.tvlight_on_by_sunset
+  - group.all_automations
+
+waqi_hornsgatan:
+  name: WAQI Hornsgatan
+  entities:
+  - sensor.waqi_stockholm_hornsgatan
+devices:
+  name: Devices
+  entities:
+  - device_tracker.8416f93baad2
+  - device_tracker.f05a093cec20
+  - device_tracker.0090a94024eb
+  - device_tracker.f4f5d88b016e
+  - device_tracker.001c50217c6d
+  - device_tracker.b827eb388561
+  - device_tracker.2c1f232a8b6b
+  - device_tracker.148f213e5a6d
+  - device_tracker.148f2142cfde
+  - device_tracker.148f213e5a6d
+lights:
+  name: Lights
+  entities:
+  - light.spotlight_
+  - light.tv
+  - light.hue_iris
+  - switch.fluxer
+hardware:
+  name: Hardware
+  view: true
+  entities:
+  - device_tracker.b0c554409486
+  - device_tracker.0017882b9ca9
+  - device_tracker.001c50217c6d
+  - device_tracker.0090a94024eb
+  - device_tracker.cc2d8cb75591
+  - device_tracker.b827eb388561
+  - device_tracker.c04a00180ea1
+  - device_tracker.f4f5d88b016e
+  - device_tracker.f4f5d88b016e
+  - device_tracker.148f2142cfde
+  - device_tracker.148f213e5a6d
+  - group.rpi
+  - group.zwave
+  - group.zigbee
+rpi:
+  name: RPi
+  entities:
+  - sensor.ram_available
+  - sensor.cpu_used
+  - sensor.disk_used_home
+  - sensor.last_boot
+  - sensor.since_last_boot
+  - sensor.swap_use
+zwave:
+  name: Z-Wave
+  entities:
+  - zwave.aeotec_zw090_zstick_gen5_eu
+  - zwave.fibaro_eye
+  - sensor.fibaro_eye_battery
+  - zwave.fibaro_system_fgdw002_door_opening_sensor_2
+  - zwave.multisensor_6
+  - zwave.wallplug_tv
+  - zwave.door_sensor_2
+  - sensor.door_sensor_2_access_control
+  - sensor.door_sensor_2_alarm_sensor
+  - sensor.door_sensor_2_alarm_type
+  - sensor.door_sensor_2_burglar
+  - sensor.door_sensor_2_heat
+  - sensor.door_sensor_2_power_management
+  - sensor.door_sensor_2_sourcenodeid
+  - sensor.door_sensor_2_temperature
+zigbee:
+  name: ZigBee
+  entities:
+  - sensor.hue_entre_battery
+  - sensor.hue_kitchen_battery
+snmp:
+  name: Snmp
+  entities:
+  - sensor.snmp_6
+  - sensor.snmp_7
+  - sensor.snmp_8
+  - sensor.snmp_9
+  - sensor.snmp_10
+  - sensor.snmp_speed
+
+wallplugs:
+  name: Wallplugs
+  entities:
+  - switch.wallplug_tv_switch
+  - sensor.wallplug_tv_energy
+  - sensor.wallplug_tv_exporting
+  - sensor.wallplug_tv_power
+  - sensor.wallplug_tv_power_2
+  - switch.fibaro_system_fgwpef_wall_plug_switch
+  - sensor.fibaro_system_fgwpef_wall_plug_power
+  - sensor.fibaro_system_fgwpef_wall_plug_energy
+  - switch.fibaro_system_fgwpef_wall_plug_switch_2
+  - sensor.fibaro_system_fgwpef_wall_plug_power_2
+  - sensor.fibaro_system_fgwpef_wall_plug_energy_2
+  - switch.koksuttag_diskbank_switch
+  - sensor.koksuttag_diskbank_power
+  - sensor.koksuttag_diskbank_power_2
+  - sensor.koksuttag_diskbank_energy
+tablet:
+  name: Tablet-view
+  view: true
+  entities:
+  - input_select.state
+  - switch.fibaro_system_fgwpef_wall_plug_switch
+  - switch.fibaro_system_fgwpef_wall_plug_switch_2
+  - switch.koksuttag_diskbank_switch
+  - sensor.cpu_use
+  - sensor.disk_use_home
+  - light.spotlight_
+  - light.tv
+  - light.hue_iris
+  - sun.sun
+  - sensor.moon
+  - sensor.stockholm_temperature
+  - device_tracker.8c7967a52ffb
+  - binary_sensor.multisensor_6_sensor
+  - binary_sensor.fibaro_eye_sensor
+  - media_player.lg_55ea970w
+  - group.tablet_indoor_climat
+  - group.tablet_wallplugs
+  - group.weather
+  - group.tablet_outdoor_climat
+
+tablet_indoor_climat:
+  name: Indoor Climat
+  entities:
+  - sensor.max_sensor
+  - sensor.indoor_min_temp
+  - sensor.indoor_average_temp
+  - sensor.multisensor_6_luminance
+  - sensor.fibaro_eye_luminance
+  - sensor.multisensor_6_temperature
+  - sensor.fibaro_eye_temperature
+  - sensor.multisensor_6_relative_humidity
+  - sensor.fibaro_eye_seismic_intensity
+  - sensor.last_update
+  - sensor.hue_kitchen_light
+  - sensor.hue_kitchen_temp
+  - sensor.hue_entre_light
+  - sensor.hue_entre_temp
+  - sensor.door_sensor_2_temperature
+tablet_outdoor_climat:
+  name: Outdoor Climat
+  entities:
+  - sensor.stockholm_temperature
+  - sensor.stockholm_dewpoint_temperature
+  - sensor.stockholm_pressure
+  - sensor.stockholm_humidity
+  - sensor.stockholm_wind_speed
+  - sensor.stockholm_wind_direction
+  - sensor.us_air_pollution_level
+  - sensor.us_air_quality_index
+
+tablet_wallplugs:
+  name: Wallplug
+  entities:
+  - switch.fibaro_system_fgwpef_wall_plug_switch
+  - switch.fibaro_system_fgwpef_wall_plug_switch_2
+  - switch.koksuttag_diskbank_switch
+upnp:
+  name: UPNP
+#  view: true
+  entities:
+#  - sensor.igd_packets_recived
+#  - sensor.igd_packets_sent
+#  - sensor.igd_recived_bytes
+  - sensor.igd_sent_bytes
+  - sensor.igd_packets_received
+  - sensor.igd_packets_sent
+  - sensor.igd_received_bytes
+mqtt:
+  name: MQTT
+#  view: true
+  entities:
+  - sensor.mqtt_sensor
+  - sensor.plantsensor
+#  - sensor.igd_sent_bytes

@@ -1,0 +1,131 @@
+switch.magicmirror_on_off:
+  assumed_state: false
+device_tracker.8c7967a52ffb:
+  icon: mdi:cellphone-android
+device_tracker.f4f5d88b016e:
+  icon: mdi:cast
+media_player.kodi:
+  icon: mdi:kodi
+device_tracker.cc2d8cb75591:
+  icon: mdi:television
+device_tracker.148f2142cfde:
+  icon: mdi:scale-bathroom
+device_tracker.f05a093cec20:
+  icon: mdi:tablet-android
+  name: Samsung Note 8.0
+switch.wallplug_tv_switch:
+  icon: mdi:power-socket-eu
+device_tracker.58fb8486729d:
+  icon: mdi:laptop-windows
+sensor.yr_cloudiness:
+  friendly_name: Cloudiness
+  icon: mdi:cloud
+sensor.yr_dewpoint_temperature:
+  friendly_name: Dewpoint
+  icon: mdi:thermometer
+sensor.yr_fog_2:
+  friendly_name: Fog
+  icon: mdi:weather-fog
+sensor.yr_fog:
+  friendly_name: Fog
+  icon: mdi:weather-fog
+sensor.yr_high_clouds:
+  friendly_name: High clouds
+  icon: mdi:cloud-outline
+sensor.yr_humidity:
+  friendly_name: Humidity
+  icon: mdi:water-percent
+sensor.yr_low_clouds:
+  friendly_name: Low clouds
+sensor.yr_medium_clouds:
+  friendly_name: Medium clouds
+sensor.yr_precipitation:
+  friendly_name: Precipitation
+  icon: mdi:weather-rainy
+sensor.yr_pressure:
+  friendly_name: Pressure
+sensor.yr_temperature:
+  friendly_name: Temp
+  icon: mdi:thermometer
+sensor.yr_wind_direction:
+  friendly_name: Wind direction
+  icon: mdi:weather-windy
+sensor.yr_wind_speed:
+  friendly_name: Wind speed
+  icon: mdi:speedometer
+sensor.stockholm_cloudiness:
+  friendly_name: Cloudiness
+sensor.stockholm_dewpoint_temperature:
+  friendly_name: Dewpoint
+sensor.stockholm_fog:
+  friendly_name: Fog
+sensor.stockholm_high_clouds:
+  friendly_name: High clouds
+sensor.stockholm_humidity:
+  friendly_name: Humidity
+  icon: mdi:water-percent
+sensor.stockholm_low_clouds:
+  friendly_name: Low clouds
+sensor.stockholm_medium_clouds:
+  friendly_name: Medium clouds
+sensor.stockholm_precipitation:
+  friendly_name: Precipitation
+sensor.stockholm_pressure:
+  friendly_name: Pressure
+  icon: mdi:speedometer
+sensor.stockholm_temperature:
+  friendly_name: Temp Out
+sensor.stockholm_wind_direction:
+  friendly_name: Wind direction
+  icon: mdi:compass
+sensor.stockholm_wind_speed:
+  friendly_name: Wind speed
+  icon: mdi:weather-windy
+zwave.fibaro_system_fgdw002_door_opening_sensor_2:
+  friendly_name: Door Opening Sensor
+sensor.fibaro_system_fgdw002_door_opening_sensor_2_temperature:
+  friendly_name: Door Opening Sensor Temperature
+sensor.fibaro_eye_temperature:
+  friendly_name: Fibaro Eye Temp
+sensor.multisensor_6_temperature:
+  friendly_name: Multisensor Temp
+sensor.multisensor_6_relative_humidity:
+  friendly_name: Multisensor Humidity
+  icon: mdi:water-percent
+sensor.multisensor_6_luminance:
+  friendly_name: Multisensor Luminance
+  icon: mdi:theme-light-dark
+device_tracker.0017882b9ca9:
+  icon: mdi:home-automation
+device_tracker.0090a94024eb:
+  icon: mdi:folder-network
+device_tracker.001c50217c6d:
+  icon: mdi:surround-sound-3-1
+group.all_automations:
+  hidden: false
+sensor.fibaro_eye_battery:
+  icon: mdi:battery
+device_tracker.b0c554409486:
+  icon: mdi:cctv
+sensor.hue_entre_battery:
+  icon: mdi:battery
+sensor.hue_kitchen_battery:
+  icon: mdi:battery
+sensor.hue_entre_light:
+  friendly_name: Entré Light
+  icon: mdi:theme-light-dark
+sensor.hue_entre_temp:
+  friendly_name: Entré Temp
+  icon: mdi:thermometer-lines
+sensor.hue_kitchen_light:
+  friendly_name: Kitchen Light
+  icon: mdi:theme-light-dark
+sensor.hue_kitchen_temp:
+  friendly_name: Kitchen Temp
+  icon: mdi:thermometer-lines
+sensor.fibaro_eye_luminance:
+  icon: mdi:theme-light-dark
+zwave.door_sensor_2:
+  friendly_name: Door Sensor
+sensor.door_sensor_2_temperature:
+  friendly_name: Door Sensor Temperature

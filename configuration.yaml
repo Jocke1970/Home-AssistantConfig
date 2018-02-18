@@ -1,0 +1,444 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: SoFo
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 20
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret time_zone
+
+# Customize
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+  themes:
+    day:
+      primary-color: yellow
+      primary-background-color: green
+    night:
+      primary-color: blue
+      primary-background-color: green
+    away:
+      primary-color: red
+      primary-background-color: blue
+
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # _password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123fog
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+  exclude:
+    domains:
+      - sensor
+      - device_tracker
+
+# Track the sun
+sun:
+
+# Zeroconf
+zeroconf:
+
+# Config
+config:
+
+# Panel iFrames
+panel_iframe:
+  router:
+    title: Router
+    url: 'http://192.168.1.1'
+    icon: 'mdi:router'
+  musicbox:
+    title: Mopidy
+    url: 'http://192.168.1.104:6680/musicbox_webclient/index.html#home'
+    icon: 'mdi:music'
+#  grafana:
+#    title: Grafana
+#    url: 'http://192.168.1.104:3030/example'
+#  kodi:
+#    title: Kodi
+#    icon: 'mdi:kodi'
+#    url: 'http://192.168.1.104:8080'
+  radarbox24:
+    title: Radarbox24
+    icon: 'mdi:airplane'
+    url: https://www.radarbox24.com/?widget=1&z=12&lat=59.30686060173851&lng=18.07913836947453
+  tvnu:
+    title: TV.nu
+    icon: 'mdi:television'
+    url: 'http://tv.nu'
+
+
+# Weather Prediction
+sensor: !include sensors.yaml
+
+camera:
+#  name: Test
+#  platform: generic
+#  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.test.attributes.latitude }},{{ states.device_tracker.test.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.test.attributes.latitude }},{{ states.device_tracker.test.attributes.longitude }}
+#  limit_refetch_to_url_change: true
+#  name: Zwift Schedule
+#  still_image_url: https://i2.wp.com/zwiftinsider.com/wp-content/uploads/2017/12/schedule-201801.jpg?w=605&ssl=1
+#- platform: snmp
+#  host: 192.168.1.1
+#  baseoid: iso.3.6.1.2.1.2.2.1.10.1
+#- platform: snmp
+#  host: 192.168.1.1
+#  baseoid: iso.3.6.1.2.1.2.2.1.10.2
+#- platform: snmp
+#  host: 192.168.1.1
+#  baseoid: iso.3.6.1.2.1.2.2.1.11.1
+#- platform: snmp
+#  host: 192.168.1.1
+#  baseoid: iso.3.6.1.2.1.2.2.1.11.2
+
+
+
+#- platform: api_streams
+
+#- platform: transmission
+#  host: 192.168.1.101
+#  username: 'transmission'
+#  password: 'joachim'
+#  monitored_variables:
+#    - 'current_status'
+#    - 'download_speed'
+#    - 'upload_speed'
+
+
+#- platform: template
+#  sensors:
+#    waqi_stockholm_hornsgatan_nitrogen:
+#      value_template: '{{ states.sensor.waqi_stockholm_hornsgatan.attributes.nitrogen_dioxide }}'
+#      friendly_name: 'Hornsgatan Nitrogen Dioxide Level'
+#      unit_of_measurement: 'PPB'
+#    waqi_stockholm_hornsgatan_particle:
+#      value_template: '{{ states.sensor.waqi_stockholm_hornsgatan.attributes.particle }}'
+#      friendly_name: 'Hornsgatan Particle Level'
+#      unit_of_measurement: 'PM'
+#    waqi_stockholm_hornsgatan_ozone:
+#      value_template: '{{ states.sensor.waqi_stockholm_hornsgatan.attributes.ozone }}'
+#      friendly_name: 'Hornsgatan Ozone Level'
+#    waqi_stockholm_sodermalm_nitrogen:
+#      value_template: '{{ states.sensor.waqi_stockholm_sodermalm.attributes.nitrogen_dioxide }}'
+#      friendly_name: 'Södermalm Nitrogen Dioxide Level'
+#      unit_of_measurement: 'PPB'
+#    waqi_stockholm_sodermalm_particle:
+#      value_template: '{{ states.sensor.waqi_stockholm_sodermalm.attributes.particle }}'
+#      friendly_name: 'Södermalm Particle Level'
+#      unit_of_measurement: 'PM'
+#    waqi_stockholm_sodermalm_ozone:
+#      value_template: '{{ states.sensor.waqi_stockholm_sodermalm.attributes.ozone }}'
+#      friendly_name: 'Södermalm Ozone Level'
+
+# LastFM
+#    lastfm_last_played:
+#      value_template: '{{ states.sensor.lastfm_jocke1970.attributes.Last_Played }}'
+#      friendly_name: 'Last played'
+
+# Google Travel Time
+#    sofo__budcompaniett_distance:
+#      value_template: '{{ states.sensor.sofo__budcompaniett.attributes.distance }}'
+#      friendly_name: 'Distance'
+#    sofo__budcompaniett_by_cycle_distance:
+#      value_template: '{{ states.sensor.sofo__budcompaniett_by_cycle.attributes.distance }}'
+#      friendly_name: 'Distance'
+#    next_birthday:
+#      value_template: '{{ states.calendar.contacts.attributes.message }} {{ states.calendar.contacts.attributes.start_time.split(" ")[0] }}'
+#      friendly_name: 'Next birthday'
+#    next_event:
+#      value_template: '{{ states.calendar.sa0azygmailcom.attributes.message }}'
+#      friendly_name: 'Next event'
+#    next_event_date:
+#      value_template: '{{ states.calendar.sa0azygmailcom.attributes.start_time.split(" ")[0] }}'
+#      friendly_name: 'Event date'
+#    next_event_start_time:
+#      value_template: '{{ states.calendar.sa0azygmailcom.attributes.start_time.split(" ")[1] }}'
+#      friendly_name: 'Event Starts at'
+#    next_event_end_time:
+#      value_template: '{{ states.calendar.sa0azygmailcom.attributes.end_time.split(" ")[1] }}'
+#      friendly_name: 'Event Ends at'
+#    next_event_between:
+#      value_template: '{{ states.calendar.sa0azygmailcom.attributes.start_time.split(" ")[1] }} - {{ states.calendar.sa0azygmailcom.attributes.end_time.split(" ")[1] }}'
+#      friendly_name: 'Between'
+#    next_event_location:
+#      value_template: '{{ states.calendar.sa0azygmailcom.attributes.location.split(",")[0] }}'
+#      friendly_name: 'Location'
+#    next_holiday:
+#      value_template: '{{ states.calendar.helgdagar_i_sverige.attributes.message }} {{ states.calendar.helgdagar_i_sverige.attributes.start_time.split(" ")[0] }}'
+#      friendly_name: 'Next holiday'
+#    weeknumber:
+#      value_template: '{{ states.calendar.week_numbers.attributes.message }}'
+#      friendly_name: 'Weeknumber'
+#    themeday_message:
+#      value_template: '{{ states.calendar.temadagar.attributes.message }}'
+#      friendly_name: 'Temadag:'
+#    themeday_date:
+#      value_template: '{{ states.calendar.temadagar.attributes.start_time.split(" ")[0] }}'
+#      friendly_name: 'Temadatum:'
+#    f1_date:
+#      value_template: '{{ states.calendar.f1_calendar_2017.attributes.start_time.split(" ")[0] }}'
+#      friendly_name: 'Next F1 Session:'
+#    f1_race_location:
+#      value_template: '{{ states.calendar.f1_calendar_2017.attributes.location }}'
+#      friendly_name: 'Location:'
+#    f1_race_session:
+#      value_template: '{{ states.calendar.f1_calendar_2017.attributes.message.split("(")[0] }}'
+#      friendly_name: 'Session:'
+#    f1_race_name:
+#      value_template: '{{ states.calendar.f1_calendar_2017.attributes.message.split("(")[1] }}'
+#      friendly_name: 'Racename:'
+#    f1_race_session_between:
+#      value_template: '{{ states.calendar.f1_calendar_2017.attributes.start_time.split(" ")[1] }} - {{ states.calendar.f1_calendar_2017.attributes.end_time.split(" ")[1] }}'
+#      friendly_name: 'Between'
+
+#    wind_dir:
+#      friendly_name: 'Wind Direction'
+#      value_template: >-
+#        {%if states.sensor.yr_wind_Direction.state | float<=11 %}North
+#        {% elif states.sensor.yr_wind_Direction.state | float>348 %}North
+#        {% elif states.sensor.yr_wind_Direction.state | float<=34 | float>11 %}North North East
+#        {% elif states.sensor.yr_wind_Direction.state | float<=56 | float>34 %}North East
+#        {% elif states.sensor.yr_wind_Direction.state | float<=79 | float>56 %}East North East
+#        {% elif states.sensor.yr_wind_Direction.state | float<=101 | float>79 %}East
+#        {% elif states.sensor.yr_wind_Direction.state | float<=124 | float>101 %}East South East
+#        {% elif states.sensor.yr_wind_Direction.state | float<=146 | float>124 %}South East
+#        {% elif states.sensor.yr_wind_Direction.state | float<=169 | float>146 %}South South East
+#        {% elif states.sensor.yr_wind_Direction.state | float<=191 | float>169 %}South
+#        {% elif states.sensor.yr_wind_Direction.state | float<=214 | float>191 %}South South West
+#        {% elif states.sensor.yr_wind_Direction.state | float<=236 | float>214 %}South West
+#        {% elif states.sensor.yr_wind_Direction.state | float<=259 | float>236 %}West South West
+#        {% elif states.sensor.yr_wind_Direction.state | float<=281 | float>259 %}West
+#        {% elif states.sensor.yr_wind_Direction.state | float<=304 | float>281 %}West North West
+#        {% elif states.sensor.yr_wind_Direction.state | float<=326 | float>304 %}West North West
+#        {% elif states.sensor.yr_wind_Direction.state | float<=348 | float>326 %}North North West
+#        {%- endif %}
+
+
+# Device Tracing
+device_tracker:
+- platform: nmap_tracker
+  hosts: 192.168.1.1/24
+  home_intervall: 120
+  interval_seconds: 60
+#- platform: tplink
+#  host: 192.168.1.1
+#  username: admin
+#  password: F1tt@n2016
+#- platform: trackr
+#  username: sa0azy@gmail.com
+#  password: Chiquitah2004
+# Mediaplayers
+media_player:
+  - platform: lg_netcast
+    host: 192.168.1.103
+    access_token: 320781
+    name: LG 55EA970W
+    mac: 10:08:C1:96:ED:1A
+#  - platform: kodi
+#    host: 192.168.1.104
+#  - platform: mpd
+#    host: 192.168.1.104
+  - platform: gstreamer
+    name: Raspberry PI 
+# Text to speech
+tts:
+  platform: google
+  language: 'sv'
+
+#Zones
+zone 2:
+  name: Budcompaniett
+  latitude: 59.291809
+  longitude: 18.027749
+  radius: 100
+zone 3:
+  name: Opensky City
+  latitude: 59.312509
+  longitude: 18.079913
+  radius: 10000
+
+#influxdb:
+  host: 127.0.0.1
+
+#google:
+#  client_id: 661176526014-91m1e6b64hhvpc24f2f2k2rboqv30us8.apps.googleusercontent.com
+#  client_secret: xNgcVA-EAAJYvh93zQ6cIBHR
+
+#mqtt:
+#  broker: m21.cloudmqtt.com
+#  port: 29945
+#  username: zwtllmix
+#  password: ZXUzqEx7lqMk
+
+switch:
+# Flux
+- platform: flux
+  lights:
+    - light.spotlight_
+  name: Fluxer
+  start_time: '7:00'
+  stop_time: '23:00'
+  start_colortemp: 5500
+  sunset_colortemp: 2500
+  stop_colortemp: 1800
+#  brightness: 200
+  disable_brightness_adjust: True
+  mode: mired
+# MagicMirror2
+- platform: command_line
+  switches: 
+    magicmirror_on_off:
+      command_off: "curl http://192.168.1.109:8080/remote?action=MONITOROFF"
+      command_on: "curl http://192.168.1.109:8080/remote?action=MONITORON"
+      friendly_name: MagicMirror On/Off
+
+
+
+# Notification
+# Pushbullet
+#notify:
+#  - name: pushbullet
+#    platform: pushbullet
+#    api_key: o.39Z29JlLZfnqCPws22r42PL6KlXNacLb
+
+automation: !include automations.yaml
+input_select: !include input_select.yaml
+
+shell_command:
+  hdmi: 'amixer cset numid=3 2'
+  35mm: 'amixer cset numid=3 1'
+  restart_hass: 'sudo systemctl restart home-assistant@pi.service'
+
+#light:
+#  platform: hue
+#  allow_hue_groups: true
+
+hue:
+  bridges:
+    - host: 192.168.1.101
+    - allow_hue_groups: false
+
+input_boolean:
+  audio_output_35mm:
+    name: Audio output 3.5mm
+    initial: off
+
+zwave:
+  usb_path: /dev/ttyACM0
+#  config_path: ​/usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config
+#  entity_namespace: razberry
+####################################
+#                                  #
+# Groups                           #
+#                                  #
+####################################
+
+group: !include groups.yaml
+#mqtt:
+#  broker: 192.168.1.110
+#  port: 1883
+#  client_id: hass
+#  keepalive: 60
+#  discovery: true
+#  discovery_prefix: slave
+
+#mqtt_eventstream:
+#  publish_topic: sofo
+#  subscribe_topic: slave
+#
+logger:
+  default: error
+#  logs:
+#    homeassistant.components.mqtt: info
+#    homeassistant.components.mqtt_eventstream: info
+#    homeassistant.components.zwave: info
+
+recorder:
+#  purge_days: 8
+#  exclude:
+#    entities:
+#      - sun.sun
+#      - sensor.mqtt_sensor
+#      - sensor.moon
+#      - sensor.yr_cloudiness
+#      - sensor.yr_dewpoint_temperature
+#      - sensor.yr_fog
+#      - sensor.yr_humidity
+#      - sensor.yr.precipitation
+#      - sensor.yr_pressure
+#      - sensor.yr_temperature
+#      - sensor.yr_wind_direction
+#      - sensor.yr_wind_speed
+#      - sensor.yttertemperatur_mean
+
+#    domains:
+#      - group
+#      - zone
+#      - zwave
+upnp:
+
+#feedreader:
+#  urls:
+#    - https://polisen.se/Stockholms_lan/Aktuellt/RSS/Lokal-RSS---Handelser/Lokala-RSS-listor1/Handelser-RSS---Stockholms-lan/?feed=rss
+
+plant:
+  Paradisträd (Crassula ovata):
+    sensors:
+      temperature: sensor.multisensor_6_temperature
+#      brightness: sensor.multisensor_6_luminance
+#      moisture: sensor.multisensor_6_relative_humidity
+  The other one (Celosia Caracas):
+    sensors:
+      temperature: sensor.multisensor_6_temperature
+#      brightness: sensor.multisensor_6_luminance
+#      moisture: sensor.multisensor_6_relative_humidity
+binary_sensor:
+  - platform: workday
+    country: SE
+#    workdays: [ mon, tue, wed, thu, fri ]
+#    excludes: holiday
+#  - platform: template
+#    sensors:
+#      kitchen_sensor:
+#        device_class: motion
+#        value_template: "{{ is_state('sensor.kitchen_motion_sensor', 'on') }}
+#   - platform: template
+#       entre_sensor:
+#         device_class: motion
+#         value_template: "{{ is_state('sensor.entre_motion_sensor', 'on') }}
+
+#  - platform: trend
+#    sensors:
+#      barometer_trend:
+#        entity_id: sensor.stockholm_pressure
+#        sample_duration: 300
+#        friendly_name: Barometer trend
+
+#weblink:
+#  entities:
+#    - name: Router
+#      url: http://192.168.1.1/

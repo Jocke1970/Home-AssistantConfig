@@ -1,0 +1,204 @@
+light.bathroomlamp:
+  platform: hue
+  unique_id: 00:17:88:01:03:47:aa:b3-0b
+light.hue_color_spot_3:
+  platform: hue
+  unique_id: 00:17:88:01:10:27:47:c6-0b
+light.hue_bloom_tv:
+  platform: hue
+  unique_id: 00:17:88:01:00:1d:54:ca-0b
+light.hue_color_spot_2:
+  platform: hue
+  unique_id: 00:17:88:01:10:27:44:61-0b
+light.kitchenlamp:
+  platform: hue
+  unique_id: 00:17:88:01:03:48:62:a2-0b
+light.hue_iris:
+  platform: hue
+  unique_id: 00:17:88:01:03:32:a5:2c-0b
+light.hue_color_spot_1:
+  platform: hue
+  unique_id: 00:17:88:01:10:27:44:16-0b
+binary_sensor.fibaro_eye_sensor:
+  platform: zwave
+  unique_id: 2-72057594076463104
+sensor.fibaro_eye_temperature:
+  platform: zwave
+  unique_id: 2-72057594076479506
+sensor.fibaro_eye_luminance:
+  platform: zwave
+  unique_id: 2-72057594076479538
+sensor.fibaro_eye_seismic_intensity:
+  platform: zwave
+  unique_id: 2-72057594076479890
+sensor.fibaro_eye_alarm_type:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.fibaro_eye_alarm_level:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.fibaro_eye_sourcenodeid:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.fibaro_eye_burglar:
+  platform: zwave
+  unique_id: 2-72057594077528225
+sensor.fibaro_eye_general:
+  platform: zwave
+  unique_id: 2-72057594078232577
+binary_sensor.multisensor_6_sensor:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.multisensor_6_temperature:
+  platform: zwave
+  unique_id: 3-72057594093256722
+sensor.multisensor_6_luminance:
+  platform: zwave
+  unique_id: 3-72057594093256754
+sensor.multisensor_6_relative_humidity:
+  platform: zwave
+  unique_id: 3-72057594093256786
+sensor.multisensor_6_ultraviolet:
+  platform: zwave
+  unique_id: 3-72057594093257138
+sensor.multisensor_6_alarm_type:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.multisensor_6_alarm_level:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.multisensor_6_sourcenodeid:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.multisensor_6_burglar:
+  platform: zwave
+  unique_id: 3-72057594094305441
+switch.tv_wallplug_switch:
+  platform: zwave
+  unique_id: 4-72057594109837312
+sensor.tv_wallplug_power:
+  platform: zwave
+  unique_id: 4-72057594110033986
+sensor.tv_wallplug_energy:
+  platform: zwave
+  unique_id: 4-72057594110050306
+sensor.tv_wallplug_power_2:
+  platform: zwave
+  unique_id: 4-72057594110050434
+sensor.tv_wallplug_exporting:
+  platform: zwave
+  unique_id: 4-72057594110050816
+binary_sensor.door_sensor_2_sensor:
+  platform: zwave
+  unique_id: 6-72057594143571968
+sensor.door_sensor_2_temperature:
+  platform: zwave
+  unique_id: 6-72057594143588370
+sensor.door_sensor_2_alarm_type:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.door_sensor_2_alarm_level:
+  platform: zwave
+  unique_id: 6-72057594144636945
+sensor.door_sensor_2_sourcenodeid:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.door_sensor_2_heat:
+  platform: zwave
+  unique_id: 6-72057594144637041
+sensor.door_sensor_2_access_control:
+  platform: zwave
+  unique_id: 6-72057594144637073
+sensor.door_sensor_2_burglar:
+  platform: zwave
+  unique_id: 6-72057594144637089
+sensor.door_sensor_2_power_management:
+  platform: zwave
+  unique_id: 6-72057594144637105
+switch.switch:
+  platform: zwave
+  unique_id: 7-72057594160168960
+switch.switch_2:
+  platform: zwave
+  unique_id: 8-72057594176946176
+switch.switch_3:
+  platform: zwave
+  unique_id: 9-72057594193723392
+switch.switch_4:
+  platform: zwave
+  unique_id: 10-72057594210500608
+sensor.unknown:
+  platform: zwave
+  unique_id: 7-72057594160381954
+sensor.alarm_type:
+  platform: zwave
+  unique_id: 7-72057594161414145
+sensor.alarm_level:
+  platform: zwave
+  unique_id: 7-72057594161414161
+sensor.unknown_2:
+  platform: zwave
+  unique_id: 8-72057594177159170
+sensor.unknown_3:
+  platform: zwave
+  unique_id: 9-72057594193936386
+sensor.alarm_type_2:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.alarm_level_2:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.fibaro_system_fgwpef_wall_plug_power:
+  platform: zwave
+  unique_id: 8-72057594177159298
+sensor.fibaro_system_fgwpef_wall_plug_exporting:
+  platform: zwave
+  unique_id: 8-72057594177159680
+switch.fibaro_system_fgs213_switch_switch:
+  platform: zwave
+  unique_id: 7-144115188198096896
+switch.fibaro_system_fgs223_double_relay_switch:
+  platform: zwave
+  unique_id: 9-144115188231651328
+sensor.fibaro_system_fgs223_double_relay_unknown:
+  platform: zwave
+  unique_id: 9-144115188231864322
+sensor.fibaro_system_fgs213_switch_power:
+  platform: zwave
+  unique_id: 7-72057594160382082
+sensor.fibaro_system_fgs213_switch_exporting:
+  platform: zwave
+  unique_id: 7-72057594160382464
+sensor.fibaro_system_fgs213_switch_sourcenodeid:
+  platform: zwave
+  unique_id: 7-72057594161414177
+sensor.fibaro_system_fgs213_switch_heat:
+  platform: zwave
+  unique_id: 7-72057594161414257
+sensor.fibaro_system_fgs213_switch_power_management:
+  platform: zwave
+  unique_id: 7-72057594161414321
+sensor.fibaro_system_fgs223_double_relay_power:
+  platform: zwave
+  unique_id: 9-72057594193936514
+sensor.fibaro_system_fgs223_double_relay_exporting:
+  platform: zwave
+  unique_id: 9-72057594193936896
+sensor.fibaro_system_fgs223_double_relay_power_2:
+  platform: zwave
+  unique_id: 9-144115188231864450
+sensor.fibaro_system_fgs223_double_relay_exporting_2:
+  platform: zwave
+  unique_id: 9-144115188231864832
+sensor.fibaro_system_fgs223_double_relay_sourcenodeid:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.fibaro_system_fgs223_double_relay_heat:
+  platform: zwave
+  unique_id: 9-72057594194968689
+sensor.fibaro_system_fgs223_double_relay_power_management:
+  platform: zwave
+  unique_id: 9-72057594194968753
+sensor.fibaro_system_fgwpef_wall_plug_power_2:
+  platform: zwave
+  unique_id: 8-72057594177142850
