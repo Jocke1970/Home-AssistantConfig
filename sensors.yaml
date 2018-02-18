@@ -22,7 +22,7 @@
 
 # Yr Weather
 - platform: yr
-  name: Stockholm
+  name: !secret yr_location
   forecast: 24
   monitored_conditions:
     - temperature
@@ -44,143 +44,11 @@
 #  users:
 #    - !secret lastfm_users
 
-# Google Maps Travel Time
-#- platform: google_travel_time
-#  api_key: AIzaSyCSQyWj-cl91gILN-NcEgRJoohzUGJi5fQ
-#  origin: zone.home
-#  destination: zone.budcompaniett
-#  name: SoFo -> Budcompaniett
-#- platform: google_travel_time
-#  api_key: AIzaSyCSQyWj-cl91gILN-NcEgRJoohzUGJi5fQ
-#  origin: zone.home
-#  destination: zone.budcompaniett
-#  name: SoFo -> Budcompaniett by Cycle
-#  options:
-#    mode: bicycling
 
-# WAQI
-#- platform: waqi
-#  token: 99ee61ccb4034f1323c46ae5c7754d805a6163fc
-#  locations:
-#    - stockholm
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: 1.3.6.1.2.1.2.2.1.10.6
-
-- platform: mqtt
-  state_topic: "plantsensor"
-  name: "Plantsensor"
-
-#- platform: mqtt
-#  name: paradistrad_temperature
-#  state_topic: "plantsensor"
-#  value_template: '{{ value_json.temperature }}'
-#- platform: mqtt
-#  name: paradistrad_moisture
-#  state_topic: "plantsensor"
-#  value_template: '{{ value_json.humidity }}'
-- platform: mqtt
-  name: plantsensor_temperature
-  state_topic: "plantsensor"
-  value_template: '{{ value_json.temperature }}'
-- platform: mqtt
-  name: plantsensor_moisture
-  state_topic: "plantsensor"
-  value_template: '{{ value_json.humidity }}'
-
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: 1.3.6.1.2.1.2.2.1.16.6
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: 1.3.6.1.2.1.2.2.1.11.1
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: 1.3.6.1.2.1.2.2.1.11.2
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: 1.3.6.1.4.1.2021.10.1.3.1
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: 1.3.6.1.4.1.2021.10.1.3.2
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: 1.3.6.1.4.1.2021.10.1.3.3
-#- platform: statistics
-#  name: hornsgatan
-#  entity_id: sensor.waqi_stockholm_hornsgatan
-#- platform: statistics
-#  name: lilla_essingen
-#  entity_id: sensor.waqi_stockholm_lilla_essingen
-#- platform: statistics
-#  name: norrlandsgatan
-#  entity_id: sensor.waqi_stockholm_norrlandsg
-#- platform: statistics
-#  name: sodermalm
-#  entity_id: sensor.waqi_stockholm_sodermalm
-#- platform: statistics
-#  name: sveavagen
-#  entity_id: sensor.waqi_stockholm_sveavagen
 - platform: statistics
   name: yttertemperatur
   entity_id: sensor.yr_temperature
-#- platform: opensky
-#  name: Nearby
-#  latitude: 59.314272
-#  longitude: 18.066158
-#  radius: 2
-#- platform: opensky
-#  name: City
-#  latitude: 59.330125
-#  longitude: 18.070278
-#  radius: 4
-#- platform: opensky
-#  name: Sthlm
-#  latitude: 59.330125
-#  longitude: 18.070278
-#  radius: 30
 - platform: api_streams
-
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: iso.3.6.1.2.1.2.2.1.16.6
-#  name: Snmp 6
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: iso.3.6.1.2.1.2.2.1.16.7
-#  name: Snmp 7
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: iso.3.6.1.2.1.2.2.1.16.8
-#  name: Snmp 8
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: iso.3.6.1.2.1.2.2.1.16.9
-#  name: Snmp 9
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: iso.3.6.1.2.1.2.2.1.16.10
-#  name: Snmp 10
-#- platform: snmp
-#  host: 192.168.1.1
-#  baseoid: iso.3.6.1.2.1.2.2.1.6
-#  name: Snmp Speed
-
-#- platform: darksky
-#  api_key: 2e0637930ef4bbd2aa8ba6cfa9f8dac1
-#  monitored_conditions:
-#    - summary
-#    - ozone
-#    - temperature_max
-#    - temperature_min
-#    - apparent_temperature_min
-#    - apparent_temperature_max
-#   - precip_type
-#    - precip_intensity
-#    - precip_probability
-#    - precip_intensity_max
-#    - update_intervall: '00:15'
-
 
 - platform: template
   sensors: 
@@ -194,28 +62,27 @@
       unit_of_measurement: '%'
     hue_kitchen_light:
       friendly_name: "Hue Kitchen Light"
-      value_template: '{{ states.sensor.kitchen_motion_sensor.attributes.lux| round(1) }}'
+      value_template: '{{ states.sensor.kitchen_motion_sensor.attributes.lux| round(0) }}'
       unit_of_measurement: 'Lux'
     hue_entre_temp:
       friendly_name: "Hue Entré Temp"
       value_template: '{{ states.sensor.entre_motion_sensor.attributes.temperature | round(1) }}'
-#      unit_of_measurement: '°C'
+      unit_of_measurement: '°C'
     hue_entre_battery:
       friendly_name: "Hue Entré Battery"
       value_template: '{{ states.sensor.entre_motion_sensor.attributes.battery }}'
       unit_of_measurement: '%'
     hue_entre_light:
       friendly_name: "Hue Entré Light"
-      value_template: '{{ states.sensor.entre_motion_sensor.attributes.lux| round(1) }}'
+      value_template: '{{ states.sensor.entre_motion_sensor.attributes.lux| round(0) }}'
       unit_of_measurement: 'Lux'
-
     fibaro_eye_battery:
       friendly_name: "Fibaro Eye Battery"
       value_template: '{{ states.zwave.fibaro_eye.attributes.battery_level }}'
       unit_of_measurement: '%'
-    fibaro_door_sensor_2_battery:
-      friendly_name: "Fibaro Door Sensor 2 Battery"
-      value_template: '{{ states.zwave.fibaro_door_sensor_2.attributes.battery_level }}'
+    fibaro_door_sensor_battery:
+      friendly_name: "Fibaro Door Sensor Battery"
+      value_template: '{{ states.zwave.fibaro_door_sensor.attributes.battery_level }}'
       unit_of_measurement: '%'
     indoor_min_temp:
       friendly_name: "Indoor Min Temp"
@@ -227,49 +94,14 @@
       unit_of_measurement: '°C'
 
 
-#      icon_template: >
-#        {% if states.zwave.fibaro_eye.attributes.battery_level > 95 %}
-#            mdi:battery
-#        {% if is_state('states.zwave.fibaro_eye.attributes.battery_level' < 94 ) and is_state('states.zwave.fibaro_eye.attributes.battery_level' > 70 )
-#            mdi:battery-70
-#        {% if is_state('states.zwave.fibaro_eye.attributes.battery_level' < 69 ) and is_state('states.zwave.fibaro_eye.attributes.battery_level' > 50 )
-#            mdi:battery-50
-#        {% if is_state('states.zwave.fibaro_eye.attributes.battery_level' < 49 ) and is_state('states.zwave.fibaro_eye.attributes.battery_level' > 40 )
-#            mdi:battery-40
-#        {% if is_state('states.zwave.fibaro_eye.attributes.battery_level' < 30 ) and is_state('states.zwave.fibaro_eye.attributes.battery_level' > 39 )
-#            mdi:battery-30
-#        {% if is_state('states.zwave.fibaro_eye.attributes.battery_level' < 20 ) and is_state('states.zwave.fibaro_eye.attributes.battery_level' > 29 )
-#            mdi:battery-20
-#        {% if is_state('states.zwave.fibaro_eye.attributes.battery_level' < 10 ) and is_state('states.zwave.fibaro_eye.attributes.battery_level' > 19 )
-#            mdi:battery-10
-#        {% else %}
-#        {% elif is_state('states.zwave.fibaro_eye.attributes.battery_level' < 10 ) and is_state('states.zwave.fibaro_eye.attributes.battery_level' > 19 )
-#            mdi:battery-alert
-#        {% endif %}
-
-
-
-#      value_template: >-
-#        {
-
-#    total_energy:
-#      value_template: '{{ (( states.switch.koksuttag_diskbank_switch.attributes.power_consumption | int ) + ( states.switch.fibaro_system_fgwpef_wall_plug_switch.attributes.power_consumption | int ) + ( states.switch.fibaro_system_fgwpef_wall_plug_switch_2.attributes.power_consumption | int )) }}'
-#      value_template: '{{ states.switch.fibaro_system_fgwpef_wall_plug_switch.attributes.power_consumption }}'
-#      value_template: '{{ states.sensor.wallplug_tv_power }}'
-#      friendly_name: 'Total Energy'
-#      unit_of_measurement: 'Watts'
-#    aeotec_last_update:
-#      value_template: '{{ states.sensor.aeotec_zw100_multisensor_6_temperature.last_updated }}'
-#      friendly_name: 'Aeotec last update'
-#      unit_of_measurement: 'Time'
 - platform: season
   type: astronomical
 - platform: airvisual
   api_key: !secret airvisual_api_key
   monitored_conditions: us
-  city: stockholm
-  state: stockholm
-  country: sweden
+  city: !secret airvisual_city
+  state: !secret airvisual_state
+  country: !secret airvisual_country
   radius: 30000
 
 - platform: hue

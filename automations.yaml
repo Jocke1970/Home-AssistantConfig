@@ -1,136 +1,206 @@
 - id: magicmirror_on_by_motion
   alias: MagicMirror on by motion
   trigger:
-    - platform: state
-      entity_id: binary_sensor.fibaro_eye_sensor
-      to: 'on'
+  - platform: state
+    entity_id: binary_sensor.fibaro_eye_sensor
+    to: 'on'
   condition:
   - condition: state
     entity_id: switch.magicmirror_on_off
     state: 'off'
   action:
-#  - alias: MagicMirror On
-    - service: homeassistant.turn_on
-      entity_id: switch.magicmirror_on_off
-    - delay:
-        seconds: 90
-    - service: homeassistant.turn_off
-      entity_id: switch.magicmirror_on_off
-#############################################
-#alias: MagicMirror on by presence by Joachim Axon 7
-#trigger:
-#  entity_id: device_tracker.8c7967a52ffb
-#  platform: state
-#  to: 'not_home'
-#action:
-#  - alias: MagicMirror Off
-#  service: homeassistant.turn_off
-#  entity_id: switch.magicmirror_on_off
+  - service: homeassistant.turn_on
+    entity_id: switch.magicmirror_on_off
+  - delay:
+      seconds: 90
+  - service: homeassistant.turn_off
+    entity_id: switch.magicmirror_on_off
 - id: tv-light_on_by_sunset
   alias: tv-light_on_by_sunset
   trigger:
-    - platform: sun
-      event: sunset
+  - event: sunset
+    platform: sun
   condition:
-  - condition: time
-    before: "21:00:00"
+  - after: '15:00'
+    before: '21:00'
+    condition: time
   action:
-    - service: homeassistant.turn_on
-      entity_id: light.tv
+  - entity_id: light.tv
+    service: homeassistant.turn_on
 - id: change_state_when_arriving_home
   alias: change_state_when_arriving_home
   trigger:
-    - platform: state
-      entity_id: device_tracker.8c7967a52ffb
-      to: 'home'
+  - platform: state
+    entity_id: device_tracker.8c7967a52ffb
+    to: home
   condition:
   - condition: state
     entity_id: input_select.state
-    state: 'Away'
+    state: Away
   action:
-    - service: input_select.option
-      data: 
-        entity_id: input_select.state
-        option: 'Home'
+  - service: input_select.option
+    data:
+      entity_id: input_select.state
+      option: Home
 - id: change_state_from_sleeping
   alias: change_state_from_sleeping
   trigger:
-    - platform: state
-      entity_id: binary_sensor.fibaro_eye_sensor
-      to: 'on'
+  - platform: state
+    entity_id: binary_sensor.fibaro_eye_sensor
+    to: 'on'
   condition:
   - condition: state
     entity_id: input_select.state
-    state: 'Sleeping'
+    state: Sleeping
   action:
-    - service: input_select.option
-      data: 
-        entity_id: input_select.state
-        option: 'Home'
-- id: turn_on_rooflamp_when_when_precens_detected_and_dark
-  alias: turn_on_rooflamp_when_when_precens_detected_and_dark
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.fibaro_eye_luminance
-      below: 5
-  condition:
-  - condition: state
-    entity_id: device_tracker.8c7967a52ffb
-    state: 'Home'
-  action:
-    service: homeassistant.turn_on
-#      data: 
-    entity_id: light.spotlight 
-#        option: 'Home'
-
-- id: automatic_theme_change
-  alias: Automatic Theme Change
-  trigger:
-    - platform: state
-      entity_id: sun.sun
-      to: above_horizon
-    - platform: state
-      entity_id: sun.sun
-      to: below_horizon
-  action:
-    - service_template: frontend.set_theme
-      data_template:
-        name: >
-          {% if states.sun.sun.state == "above_horizon" %}
-            default
-          {% else %}
-            darkred # <-- change to your dark theme name.
-          {% endif %}
-
+  - service: input_select.option
+    data:
+      entity_id: input_select.state
+      option: Home
 - id: hue_iris_goodnight_30_minutes
   alias: hue_iris_goodnight_30_minutes
   trigger:
-    - platform: state
-      entity_id: input_select.state
-      to: 'Sleeping'
+  - platform: state
+    entity_id: input_select.state
+    to: Sleeping
   action:
-     service: homeassistant.turn_off
-     data: 
-       entity_id: light.hue_iris 
-       transition: 1800
-#- id: restart_hass_2_minutes_to_midnight
-#  alias: restart_hass_2_minutes_to_midnight
-#  trigger:
-#    - platform: time
-#      at: "23:58:00"
-#  action:
-#    service: shell_command.restart_hass
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.hue_iris
+      transition: 1800
 - id: sofo_shutdown
   alias: sofo_shutdown
   trigger:
-    - platform: state
-      entity_id: input_select.state
-      to: 'Sleeping'
+  - platform: state
+    entity_id: input_select.state
+    to: Sleeping
   action:
-     service: homeassistant.turn_off
-     data: 
-       entity_id:
-         - light.tv
-         - media_player.lg_55ea970w
-         - light.spotlight
-         - light.taklampa
+    service: homeassistant.turn_off
+    data:
+      entity_id:
+      - light.hue_bloom_tv
+      - media_player.lg_55ea970w
+      - light.spotlight_
+      - light.taklampa
+- action:
+  - data:
+      brightness: 100
+    entity_id: light.kitchenlamp
+    service: homeassistant.turn_on
+  alias: Kitchenlight on by motion
+  condition:
+  - below: '10'
+    condition: numeric_state
+    entity_id: sensor.hue_kitchen_light
+  - after: 05:00
+    before: '22:00'
+    condition: time
+  id: '1518546742322'
+  trigger:
+  - entity_id: sensor.kitchen_motion_sensor
+    platform: state
+    to: 'on'
+- action:
+  - service: homeassistant.turn_off
+    entity_id: group.lights
+  alias: Lights off when leave home
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  - after: 05:00
+    before: '18:00'
+    condition: time
+  id: '1518547807873'
+  trigger:
+  - entity_id: device_tracker.8c7967a52ffb
+    from: home
+    platform: state
+    to: away
+- action:
+  - service: homeassistant.turn_off
+    entity_id: light.kitchenlamp
+  alias: Kitchenlight off when no motion
+  id: '1518548525387'
+  trigger:
+  - entity_id: sensor.kitchen_motion_sensor
+    platform: state
+    to: 'off'
+- action:
+  - service: homeassistant.turn_on
+    entity_id: switch.switch_2
+  alias: Entrélight on when motion in entré
+  condition:
+  - below: '10'
+    condition: numeric_state
+    entity_id: sensor.hue_entre_light
+  id: '1518551771315'
+  trigger:
+  - entity_id: sensor.entre_motion_sensor
+    platform: state
+    to: 'on'
+- action:
+  - delay: 0:30
+  - service: homeassistant.turn_off
+    entity_id: switch.switch_2
+  alias: Entrélight off when no motion
+  id: '1518551977736'
+  trigger:
+  - entity_id: sensor.entre_motion_sensor
+    platform: state
+    to: 'off'
+- action:
+  - entity_id: group.lights
+    service: homeassistant.turn_off
+  alias: Lights and Charger Wallplug off by state AWAY
+  condition: []
+  id: '1518556092605'
+  trigger:
+  - entity_id: input_select.state
+    platform: state
+    to: Away
+- action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.state
+      option: Home
+  alias: Set state HOME when arriving
+  condition:
+  - condition: state
+    entity_id: input_select.state
+    state: Away
+  id: '1518556312262'
+  trigger:
+  - entity_id: sensor.entre_motion_sensor
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      brightness: 15
+    entity_id: light.kitchenlamp
+    service: homeassistant.turn_on
+  alias: Kitchenlight on by motion at night
+  condition:
+  - after: '22:00'
+    before: 04:59
+    condition: time
+  id: '1518557831528'
+  trigger:
+  - entity_id: sensor.kitchen_motion_sensor
+    platform: state
+    to: 'on'
+- action:
+  - service: homeassistant.turn_on
+    data:
+      brightness: 50
+    entity_id: light.hue_iris
+  alias: Morninglight on by motion
+  condition:
+  - condition: state
+    entity_id: input_select.state
+    state: Sleeping
+  id: '1518558123252'
+  trigger:
+  - entity_id: binary_sensor.sensor
+    platform: state
+    to: 'on'

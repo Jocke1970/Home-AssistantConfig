@@ -4,12 +4,16 @@ default_view:
   - sensor.season
 #  - weblink.router
   - binary_sensor.workday_sensor
+  - binary_sensor.sensor
+  - binary_sensor.sensor_2
+  - binary_sensor.sensor_3
   - sun.sun
   - sensor.total_energy
   - sensor.fibaro_system_fgdw002_door_opening_sensor_2_temperature
   - binary_sensor.fibaro_system_fgdw002_door_opening_sensor_2_sensor
   - binary_sensor.door_sensor_2_sensor
-  - sensor.door_sensor_2_temperature
+  - sensor.fibaro_system_fgdw002_door_opening_sensor_2
+  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_temperature
   - sensor.connected_clients
   - sensor.moon
   - sensor.stockholm_temperature
@@ -19,15 +23,15 @@ default_view:
   - sensor.hue_kitchen_light
   - device_tracker.8c7967a52ffb
   - device_tracker.dc415f2153b3
-  - binary_sensor.multisensor_6_sensor
-  - binary_sensor.fibaro_eye_sensor
+  - binary_sensor.aeotec_zw100_multisensor_6_sensor
+  - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
   - sensor.sofo__budcompaniett
   - sensor.sofo__budcompaniett_by_cycle
-  - sensor.multisensor_6_luminance
-  - sensor.fibaro_eye_luminance
-  - sensor.multisensor_6_temperature
-  - sensor.fibaro_eye_temperature
-  - sensor.fibaro_eye_seismic_intensity
+  - sensor.aeotec_zw100_multisensor_6_luminance
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+  - sensor.aeotec_zw100_multisensor_6_temperature
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity
 #  - camera.test
   - media_player.lg_55ea970w
 #  - media_player.kodi
@@ -67,6 +71,7 @@ weather:
   name: Weather
   view: true
   entities:
+  - weather.openweathermap
   - sensor.stockholm_temperature
   - sensor.stockholm_dewpoint_temperature
   - sensor.stockholm_cloudiness
@@ -127,8 +132,10 @@ devices:
 lights:
   name: Lights
   entities:
+  - light.bathroomlamp
+  - light.kitchenlamp
   - light.spotlight_
-  - light.tv
+  - light.hue_bloom_tv
   - light.hue_iris
   - switch.fluxer
 hardware:
@@ -158,24 +165,27 @@ rpi:
   - sensor.last_boot
   - sensor.since_last_boot
   - sensor.swap_use
-zwave:
-  name: Z-Wave
-  entities:
-  - zwave.aeotec_zw090_zstick_gen5_eu
-  - zwave.fibaro_eye
-  - sensor.fibaro_eye_battery
-  - zwave.fibaro_system_fgdw002_door_opening_sensor_2
-  - zwave.multisensor_6
-  - zwave.wallplug_tv
-  - zwave.door_sensor_2
-  - sensor.door_sensor_2_access_control
-  - sensor.door_sensor_2_alarm_sensor
-  - sensor.door_sensor_2_alarm_type
-  - sensor.door_sensor_2_burglar
-  - sensor.door_sensor_2_heat
-  - sensor.door_sensor_2_power_management
-  - sensor.door_sensor_2_sourcenodeid
-  - sensor.door_sensor_2_temperature
+#zwave:
+#  name: Z-Wave
+#  entities:
+#  - zwave.aeotec_zw090_zstick_gen5_eu
+#  - zwave.fibaro_eye
+#  - sensor.fibaro_system_fgms001zw5_motion_sensor_battery
+#  - sensor.fibaro_eye_battery
+#  - zwave.fibaro_system_fgdw002_door_opening_sensor_2
+#  - zwave.aeotec_zw100_multisensor_6
+#  - zwave.wallplug_tv
+#  - zwave.wallplug_2
+#  - zwave.door_sensor_2
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_access_control
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_alarm_sensor
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_alarm_type
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_burglar
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_heat
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_power_management
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_sourcenodeid
+#  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_temperature
+#  - sensor.fibaro_door_sensor_battery
 zigbee:
   name: ZigBee
   entities:
@@ -195,20 +205,20 @@ wallplugs:
   name: Wallplugs
   entities:
   - switch.wallplug_tv_switch
-  - sensor.wallplug_tv_energy
-  - sensor.wallplug_tv_exporting
-  - sensor.wallplug_tv_power
+  - switch.switch
+
   - sensor.wallplug_tv_power_2
   - switch.fibaro_system_fgwpef_wall_plug_switch
   - sensor.fibaro_system_fgwpef_wall_plug_power
   - sensor.fibaro_system_fgwpef_wall_plug_energy
+  - switch.switch_3
   - switch.fibaro_system_fgwpef_wall_plug_switch_2
-  - sensor.fibaro_system_fgwpef_wall_plug_power_2
   - sensor.fibaro_system_fgwpef_wall_plug_energy_2
-  - switch.koksuttag_diskbank_switch
-  - sensor.koksuttag_diskbank_power
-  - sensor.koksuttag_diskbank_power_2
-  - sensor.koksuttag_diskbank_energy
+  - switch.fibaro_system_fgwpef_wall_plug_switch_2_2
+  - sensor.fibaro_system_fgwpef_wall_plug_power_2_2
+  - sensor.fibaro_system_fgwpef_wall_plug_energy_2
+#  - sensor.fibaro_system_fgwpef_wall_plug_power_3
+  - sensor.fibaro_system_fgwpef_wall_plug_power_4
 tablet:
   name: Tablet-view
   view: true
@@ -220,14 +230,16 @@ tablet:
   - sensor.cpu_use
   - sensor.disk_use_home
   - light.spotlight_
-  - light.tv
+  - light.hue_bloom_tv
   - light.hue_iris
+  - light.bathroomlamp
+  - light.kitchenlamp
   - sun.sun
   - sensor.moon
   - sensor.stockholm_temperature
   - device_tracker.8c7967a52ffb
-  - binary_sensor.multisensor_6_sensor
-  - binary_sensor.fibaro_eye_sensor
+  - binary_sensor.aeotec_zw100_multisensor_6_sensor
+  - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
   - media_player.lg_55ea970w
   - group.tablet_indoor_climat
   - group.tablet_wallplugs
@@ -240,12 +252,12 @@ tablet_indoor_climat:
   - sensor.max_sensor
   - sensor.indoor_min_temp
   - sensor.indoor_average_temp
-  - sensor.multisensor_6_luminance
-  - sensor.fibaro_eye_luminance
-  - sensor.multisensor_6_temperature
-  - sensor.fibaro_eye_temperature
-  - sensor.multisensor_6_relative_humidity
-  - sensor.fibaro_eye_seismic_intensity
+  - sensor.aeotec_zw100_multisensor_6_luminance
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+  - sensor.aeotec_zw100_multisensor_6_temperature
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+  - sensor.aeotec_zw100_multisensor_6_relative_humidity
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity
   - sensor.last_update
   - sensor.hue_kitchen_light
   - sensor.hue_kitchen_temp
@@ -288,3 +300,54 @@ mqtt:
   - sensor.mqtt_sensor
   - sensor.plantsensor
 #  - sensor.igd_sent_bytes
+overview:
+  name: Overview
+  view: true
+  entities:
+  - group.entre
+  - group.bathroom
+  - group.kitchen
+  - group.livingroom
+  - group.apartment
+
+entre:
+  name: Entré
+  entities:
+  - sensor.entre_motion_sensor
+  - sensor.hue_entre_light
+  - sensor.hue_entre_temp
+#  - switch.fibaro_system_fgs213_switch_switch
+  - switch.switch_2
+  - sensor.wallswitch_entre_power
+bathroom:
+  name: Bathroom
+  entities:
+  - sensor.fibaro_system_fgdw002_door_opening_sensor_2_temperature
+  - light.bathroomlamp
+kitchen:
+  name: Kitchen
+  entities:
+  - sensor.kitchen_motion_sensor
+  - sensor.hue_kitchen_light
+  - sensor.hue_kitchen_temp
+  - light.kitchenlamp
+livingroom:
+  name: Livingroom
+  entities:
+  - light.hue_bloom_tv
+  - media_player.lg_55ea970w
+  - switch.switch
+  - sensor.fibaro_system_fgwpef_wall_plug_power
+  - sensor.unknown
+
+apartment:
+  name: Apartment
+  entities:
+  - light.hue_iris
+  - switch.switch_3
+  - sensor.fibaro_system_fgwpef_wall_plug_power_4
+  - sensor.unknown_3
+  - binary_sensor.aeotec_zw100_multisensor_6_sensor
+  - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+  - switch.wallswitch_apartment_switch
+  - switch.wallswitch_apartment_switch_2

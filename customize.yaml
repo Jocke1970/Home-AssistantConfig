@@ -103,6 +103,8 @@ device_tracker.001c50217c6d:
   icon: mdi:surround-sound-3-1
 group.all_automations:
   hidden: false
+group.zwave:
+  hidden: false
 sensor.fibaro_eye_battery:
   icon: mdi:battery
 device_tracker.b0c554409486:
@@ -129,3 +131,33 @@ zwave.door_sensor_2:
   friendly_name: Door Sensor
 sensor.door_sensor_2_temperature:
   friendly_name: Door Sensor Temperature
+zwave.door_sensor:
+  friendly_name: Door Sensor 2
+zwave.wallplug_tv:
+  icon: mdi:power-socket-eu
+zwave.wallplug_charger:
+  icon: mdi:power-socket-eu
+switch.switch_3:
+  icon: mdi:power-socket-eu
+switch.switch:
+  icon: mdi:power-socket-eu
+sensor.unknown_3:
+  icon: mdi:flash-circle
+sensor.fibaro_system_fgwpef_wall_plug_power_3:
+  icon: mdi:flash-circle
+sensor.fibaro_system_fgwpef_wall_plug_power_4:
+  icon: mdi:flash-circle
+sensor.fibaro_system_fgwpef_wall_plug_power_2:
+  icon: mdi:flash-circle
+sensor.fibaro_system_fgwpef_wall_plug_power:
+  icon: mdi:flash-circle
+sensor.unknown:
+  icon: mdi:flash-circle
+zwave.fibaro_system_fgs213_switch:
+  friendly_name: Wallswitch Entré (Ledlight Roof)
+switch.wallswitch_entre_switch:
+  friendly_name: Wallswitch Apartment Dinnertable
+switch.wallswitch_apartment_switch_2:
+  friendly_name: Roofspotlights RGB
+switch.wallswitch_apartment_switch:
+  friendly_name: Rooflamp Dinnertable
