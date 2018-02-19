@@ -185,6 +185,7 @@ input_boolean:
 zwave:
   usb_path: /dev/ttyACM0
 #  config_path: ​/usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config
+
 logger:
   default: error
 #  logs:
@@ -200,7 +201,7 @@ recorder:
       - zwave
     entities:
       - sun.sun
-      - sensor.mqtt_sensor
+#      - sensor.mqtt_sensor
 #      - sensor.moon
 #      - sensor.yr_cloudiness
 #      - sensor.yr_dewpoint_temperature

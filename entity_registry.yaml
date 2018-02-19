@@ -202,3 +202,15 @@ sensor.wallswitch_apartment_power_management:
 switch.switch_4:
   platform: zwave
   unique_id: 10-72057594210500608
+sensor.unknown_4:
+  platform: zwave
+  unique_id: 10-72057594210713602
+sensor.power:
+  platform: zwave
+  unique_id: 10-72057594210697282
+sensor.fibaro_system_fgwpef_wall_plug_power_5:
+  platform: zwave
+  unique_id: 10-72057594210713730
+sensor.fibaro_system_fgwpef_wall_plug_exporting_3:
+  platform: zwave
+  unique_id: 10-72057594210714112

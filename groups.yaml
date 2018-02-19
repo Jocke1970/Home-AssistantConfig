@@ -55,18 +55,18 @@ default_view:
   - sensor.kitchen_motion_sensor
   name: default_view
 
-air:
-  name: WAQI
-  view: true
-  entities:
-  - sensor.waqi_stockholm_hornsgatan_sweden
-  - sensor.waqi_stockholm_lilla_essingen_sweden
-  - sensor.waqi_stockholm_norrlandsg_sweden
-  - sensor.waqi_stockholm_sodermalm_sweden
-  - sensor.waqi_stockholm_sveavagen_sweden
-  - sensor.us_air_quality_index
-  - sensor.us_main_pollutant
-  - sensor.us_air_pollution_level
+#air:
+#  name: WAQI
+#  view: true
+#  entities:
+#  - sensor.waqi_stockholm_hornsgatan_sweden
+#  - sensor.waqi_stockholm_lilla_essingen_sweden
+#  - sensor.waqi_stockholm_norrlandsg_sweden
+#  - sensor.waqi_stockholm_sodermalm_sweden
+#  - sensor.waqi_stockholm_sveavagen_sweden
+#  - sensor.us_air_quality_index
+#  - sensor.us_main_pollutant
+#  - sensor.us_air_pollution_level
 weather:
   name: Weather
   view: true
@@ -206,7 +206,6 @@ wallplugs:
   entities:
   - switch.wallplug_tv_switch
   - switch.switch
-
   - sensor.wallplug_tv_power_2
   - switch.fibaro_system_fgwpef_wall_plug_switch
   - sensor.fibaro_system_fgwpef_wall_plug_power
@@ -219,6 +218,7 @@ wallplugs:
   - sensor.fibaro_system_fgwpef_wall_plug_energy_2
 #  - sensor.fibaro_system_fgwpef_wall_plug_power_3
   - sensor.fibaro_system_fgwpef_wall_plug_power_4
+  - switch.switch_4
 tablet:
   name: Tablet-view
   view: true
@@ -273,6 +273,11 @@ tablet_outdoor_climat:
   - sensor.stockholm_humidity
   - sensor.stockholm_wind_speed
   - sensor.stockholm_wind_direction
+  - sensor.waqi_stockholm_hornsgatan_sweden
+  - sensor.waqi_stockholm_lilla_essingen_sweden
+  - sensor.waqi_stockholm_norrlandsg_sweden
+  - sensor.waqi_stockholm_sodermalm_sweden
+  - sensor.waqi_stockholm_sveavagen_sweden
   - sensor.us_air_pollution_level
   - sensor.us_air_quality_index
 
@@ -350,4 +355,6 @@ apartment:
   - binary_sensor.aeotec_zw100_multisensor_6_sensor
   - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
   - switch.wallswitch_apartment_switch
+  - sensor.wallswitch_apartment_power
   - switch.wallswitch_apartment_switch_2
+  - sensor.wallswitch_apartment_power_2

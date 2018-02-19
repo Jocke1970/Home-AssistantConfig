@@ -204,3 +204,19 @@
   - entity_id: binary_sensor.sensor
     platform: state
     to: 'on'
+- action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id:
+      - light.hue_bloom_tv
+      - light.hue_iris
+  alias: Lights on when state goes to Home and its dark
+  condition:
+  - below: '10'
+    condition: numeric_state
+    entity_id: sensor.aeotec_zw100_multisensor_6_luminance
+  id: '1519056447925'
+  trigger:
+  - entity_id: input_select.state
+    platform: state
+    to: Home

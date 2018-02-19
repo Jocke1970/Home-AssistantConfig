@@ -93,9 +93,9 @@
       value_template: '{{ states.sensor.max_sensor.attributes.mean }}'
       unit_of_measurement: '°C'
 
-
 - platform: season
   type: astronomical
+
 - platform: airvisual
   api_key: !secret airvisual_api_key
   monitored_conditions: us
@@ -111,4 +111,9 @@
     - sensor.hue_kitchen_temp
     - sensor.hue_entre_temp
     - sensor.multisensor_6_temperature
-    - sensor.fibaro_eye_temperature
+#    - sensor.fibaro_eye_temperature
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+- platform: waqi
+  token: !secret waqi_token
+  locations:
+    - !secret waqi_locations
