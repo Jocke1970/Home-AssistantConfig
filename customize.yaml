@@ -169,6 +169,7 @@ switch.wallswitch_apartment_switch_2:
   friendly_name: Roofspotlights RGB
 switch.wallswitch_apartment_switch:
   friendly_name: Rooflamp Dinnertable
+  icon: mdi:ceiling-light
 sensor.wallswitch_apartment_power_2:
   friendly_name: Rooflamp power consumption
 sensor.wallswitch_apartment_power:
@@ -199,3 +200,5 @@ sensor.wallswitch_entre_power_management:
   friendly_name: Wallswitch Entré Roof ledlamps Power Management
 sensor.wallswitch_entre_sourcenodeid:
   friendly_name: Wallswitch Entré Roof ledlamps SourceNodeId
+zwave.fibaro_system_fgwpef_wall_plug_2:
+  friendly_name: Wallplug Apartment Socket

@@ -36,7 +36,7 @@ default_view:
   - media_player.lg_55ea970w
 #  - media_player.kodi
   - media_player.sofo
-#  - media_player.mpd
+  - media_player.mpd
   - media_player.raspberry_pi
 #  - group.devices
   - group.lights
@@ -219,6 +219,7 @@ wallplugs:
 #  - sensor.fibaro_system_fgwpef_wall_plug_power_3
   - sensor.fibaro_system_fgwpef_wall_plug_power_4
   - switch.switch_4
+  - sensor.power
 tablet:
   name: Tablet-view
   view: true
