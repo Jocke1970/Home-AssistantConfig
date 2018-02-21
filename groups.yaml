@@ -315,7 +315,7 @@ overview:
   - group.kitchen
   - group.livingroom
   - group.apartment
-
+  - group.total_power_wallplugs
 entre:
   name: Entré
   entities:
@@ -359,3 +359,9 @@ apartment:
   - sensor.wallswitch_apartment_power
   - switch.wallswitch_apartment_switch_2
   - sensor.wallswitch_apartment_power_2
+total_power_wallplugs:
+  name: Total Power Wallplugs
+  entities:
+  - sensor.unknown
+  - sensor.unknown_3
+  - sensor.unknown_4
