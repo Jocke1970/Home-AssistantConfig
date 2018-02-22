@@ -211,5 +211,4 @@ sensor.axon_7_longitude:
   icon: mdi:crosshairs-gps
 sensor.axon_7_accuracy:
   icon: mdi:crosshairs-gps
-sensor.axon_7_battery:
-  icon: mdi:battery
+sensor.axon_7_battery: {}

@@ -96,6 +96,17 @@
       friendly_name: "Axon 7 Battery"
       value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.battery }}'
       unit_of_measurement: '%'
+      icon_template: >
+        {% set battery_level = states.device_tracker.phtagadc_joachim.attributes.battery | default(0) | int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+ 
     axon_7_accuracy:
       friendly_name: "Axon 7 Accuracy"
       value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.gps_accuracy }}'
