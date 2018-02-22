@@ -92,6 +92,23 @@
       friendly_name: "Indoor Average Temp"
       value_template: '{{ states.sensor.max_sensor.attributes.mean }}'
       unit_of_measurement: '°C'
+    axon_7_battery:
+      friendly_name: "Axon 7 Battery"
+      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.battery }}'
+      unit_of_measurement: '%'
+    axon_7_accuracy:
+      friendly_name: "Axon 7 Accuracy"
+      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.gps_accuracy }}'
+      unit_of_measurement: 'm'
+    axon_7_latitude:
+      friendly_name: "Axon 7 Latitude"
+      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.latitude }}'
+      unit_of_measurement: '°'
+    axon_7_longitude:
+      friendly_name: "Axon 7 Longitude"
+      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.longitude }}'
+      unit_of_measurement: '°'
+
 
 - platform: season
   type: astronomical

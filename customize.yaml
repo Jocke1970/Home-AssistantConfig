@@ -202,3 +202,14 @@ sensor.wallswitch_entre_sourcenodeid:
   friendly_name: Wallswitch Entré Roof ledlamps SourceNodeId
 zwave.fibaro_system_fgwpef_wall_plug_2:
   friendly_name: Wallplug Apartment Socket
+device_tracker.phtagadc_joachim:
+  friendly_name: 'Axon 7 '
+  icon: mdi:cellphone-android
+sensor.axon_7_latitude:
+  icon: mdi:crosshairs-gps
+sensor.axon_7_longitude:
+  icon: mdi:crosshairs-gps
+sensor.axon_7_accuracy:
+  icon: mdi:crosshairs-gps
+sensor.axon_7_battery:
+  icon: mdi:battery

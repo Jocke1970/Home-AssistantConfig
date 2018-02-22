@@ -148,10 +148,11 @@ sensor: !include sensors.yaml
 
 # Device Tracing
 device_tracker:
-- platform: nmap_tracker
-  hosts: 192.168.1.1/24
-  home_intervall: 120
-  interval_seconds: 60
+  - platform: nmap_tracker
+    hosts: 192.168.1.1/24
+    home_intervall: 120
+    interval_seconds: 60
+  - platform: owntracks
 
 media_player:
   - platform: lg_netcast
@@ -257,3 +258,9 @@ binary_sensor:
 weather:
   - platform: openweathermap
     api_key: !secret weather_openweathermap_api_key
+
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  username: !secret mqtt_username
+  password: !secret mqtt_password
