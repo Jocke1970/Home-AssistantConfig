@@ -86,9 +86,12 @@ frontend:
 
 http:
   # Uncomment this to add a password (recommended!)
-  # _password: PASSWORD
+  api_password: PASSWORD
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123fog
+  cors_allowed_origins:
+     - https://reformedreality.com
+     - http://reformedreality.com
 
 # Checks for available updates
 updater:
@@ -206,7 +209,7 @@ shell_command:
 hue:
   bridges:
     - host: 192.168.1.101
-    - allow_hue_groups: false
+#      allow_hue_groups: false
 
 input_boolean:
   audio_output_35mm:

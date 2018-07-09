@@ -91,6 +91,13 @@ weather:
   - sensor.dark_sky_daily_low_temperature
   - sensor.dark_sky_ozone
   - sensor.dark_sky_summary
+  - sensor.pws_uv
+  - sensor.pws_alerts
+  - sensor.pws_precip_1d_mm
+  - sensor.pws_precip_today_metric
+  - sensor.pws_precip_today_string
+  - sensor.pws_pressure_trend
+  - sensor.pws_solarradiation
 
 automations:
   name: Automations

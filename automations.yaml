@@ -140,7 +140,7 @@
     platform: state
     to: 'on'
 - action:
-#  - delay: 0:30
+  - delay: 0:30
   - service: homeassistant.turn_off
     entity_id: switch.switch_2
   alias: Entrélight off when no motion

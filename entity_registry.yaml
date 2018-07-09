@@ -1,216 +1,304 @@
 light.hue_color_spot_1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:27:44:16-0b
 light.hue_iris:
+  name:
   platform: hue
   unique_id: 00:17:88:01:03:32:a5:2c-0b
 light.hue_color_spot_3:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:27:47:c6-0b
 light.hue_bloom_tv:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:1d:54:ca-0b
 light.hue_color_spot_2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:27:44:61-0b
 switch.switch:
+  name:
   platform: zwave
   unique_id: 4-72057594109837312
 sensor.alarm_type:
+  name:
   platform: zwave
   unique_id: 3-72057594094305281
 sensor.alarm_level:
+  name:
   platform: zwave
   unique_id: 3-72057594094305297
 binary_sensor.sensor:
+  name:
   platform: zwave
   unique_id: 3-72057594093240320
 sensor.unknown:
+  name:
   platform: zwave
   unique_id: 4-72057594110050306
 sensor.fibaro_system_fgwpef_wall_plug_power:
+  name:
   platform: zwave
   unique_id: 4-72057594110033986
 sensor.fibaro_system_fgwpef_wall_plug_power_2:
+  name:
   platform: zwave
   unique_id: 4-72057594110050434
 sensor.fibaro_system_fgwpef_wall_plug_exporting:
+  name:
   platform: zwave
   unique_id: 4-72057594110050816
 sensor.aeotec_zw100_multisensor_6_temperature:
+  name:
   platform: zwave
   unique_id: 3-72057594093256722
 sensor.aeotec_zw100_multisensor_6_luminance:
+  name:
   platform: zwave
   unique_id: 3-72057594093256754
 sensor.aeotec_zw100_multisensor_6_relative_humidity:
+  name:
   platform: zwave
   unique_id: 3-72057594093256786
 sensor.aeotec_zw100_multisensor_6_ultraviolet:
+  name:
   platform: zwave
   unique_id: 3-72057594093257138
 sensor.aeotec_zw100_multisensor_6_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 3-72057594094305313
 sensor.aeotec_zw100_multisensor_6_burglar:
+  name:
   platform: zwave
   unique_id: 3-72057594094305441
 sensor.alarm_type_2:
+  name:
   platform: zwave
   unique_id: 2-72057594077528065
 sensor.alarm_level_2:
+  name:
   platform: zwave
   unique_id: 2-72057594077528081
 binary_sensor.sensor_2:
+  name:
   platform: zwave
   unique_id: 2-72057594076463104
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  name:
   platform: zwave
   unique_id: 2-72057594076479506
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  name:
   platform: zwave
   unique_id: 2-72057594076479538
 sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+  name:
   platform: zwave
   unique_id: 2-72057594076479890
 sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 2-72057594077528097
 sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  name:
   platform: zwave
   unique_id: 2-72057594077528225
 sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+  name:
   platform: zwave
   unique_id: 2-72057594078232577
 sensor.alarm_type_3:
+  name:
   platform: zwave
   unique_id: 6-72057594144636929
 sensor.alarm_level_3:
+  name:
   platform: zwave
   unique_id: 6-72057594144636945
 binary_sensor.sensor_3:
+  name:
   platform: zwave
   unique_id: 6-72057594143571968
 sensor.fibaro_system_fgdw002_door_opening_sensor_2_temperature:
+  name: Bathroom Temperature
   platform: zwave
   unique_id: 6-72057594143588370
 sensor.fibaro_system_fgdw002_door_opening_sensor_2_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 6-72057594144636961
 sensor.fibaro_system_fgdw002_door_opening_sensor_2_heat:
+  name:
   platform: zwave
   unique_id: 6-72057594144637041
 sensor.fibaro_system_fgdw002_door_opening_sensor_2_access_control:
+  name:
   platform: zwave
   unique_id: 6-72057594144637073
 sensor.fibaro_system_fgdw002_door_opening_sensor_2_burglar:
+  name:
   platform: zwave
   unique_id: 6-72057594144637089
 sensor.fibaro_system_fgdw002_door_opening_sensor_2_power_management:
+  name:
   platform: zwave
   unique_id: 6-72057594144637105
 light.bathroomlamp:
+  name:
   platform: hue
   unique_id: 00:17:88:01:03:47:aa:b3-0b
 light.kitchenlamp:
+  name:
   platform: hue
   unique_id: 00:17:88:01:03:48:62:a2-0b
 switch.switch_2:
+  name:
   platform: zwave
   unique_id: 7-72057594160168960
 sensor.unknown_2:
+  name:
   platform: zwave
   unique_id: 7-72057594160381954
 sensor.alarm_type_4:
+  name:
   platform: zwave
   unique_id: 7-72057594161414145
 sensor.alarm_level_4:
+  name:
   platform: zwave
   unique_id: 7-72057594161414161
 switch.wallswitch_entre_switch:
+  name:
   platform: zwave
   unique_id: 7-144115188198096896
 sensor.wallswitch_entre_power:
+  name:
   platform: zwave
   unique_id: 7-72057594160382082
 sensor.wallswitch_entre_exporting:
+  name:
   platform: zwave
   unique_id: 7-72057594160382464
 sensor.wallswitch_entre_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 7-72057594161414177
 sensor.wallswitch_entre_heat:
+  name:
   platform: zwave
   unique_id: 7-72057594161414257
 sensor.wallswitch_entre_power_management:
+  name:
   platform: zwave
   unique_id: 7-72057594161414321
 switch.switch_3:
+  name:
   platform: zwave
   unique_id: 8-72057594176946176
 sensor.unknown_3:
+  name:
   platform: zwave
   unique_id: 8-72057594177159170
 sensor.fibaro_system_fgwpef_wall_plug_power_3:
+  name:
   platform: zwave
   unique_id: 8-72057594177159298
 sensor.fibaro_system_fgwpef_wall_plug_exporting_2:
+  name:
   platform: zwave
   unique_id: 8-72057594177159680
 sensor.fibaro_system_fgwpef_wall_plug_power_4:
+  name:
   platform: zwave
   unique_id: 8-72057594177142850
 switch.wallswitch_apartment_switch:
+  name:
   platform: zwave
   unique_id: 9-72057594193723392
 switch.wallswitch_apartment_switch_2:
+  name:
   platform: zwave
   unique_id: 9-144115188231651328
 sensor.wallswitch_apartment_energy:
+  name:
   platform: zwave
   unique_id: 9-72057594193936386
 sensor.wallswitch_apartment_energy_2:
+  name:
   platform: zwave
   unique_id: 9-144115188231864322
 sensor.wallswitch_apartment_power:
+  name:
   platform: zwave
   unique_id: 9-72057594193936514
 sensor.wallswitch_apartment_exporting:
+  name:
   platform: zwave
   unique_id: 9-72057594193936896
 sensor.wallswitch_apartment_power_2:
+  name:
   platform: zwave
   unique_id: 9-144115188231864450
 sensor.wallswitch_apartment_exporting_2:
+  name:
   platform: zwave
   unique_id: 9-144115188231864832
 sensor.wallswitch_apartment_alarm_type:
+  name:
   platform: zwave
   unique_id: 9-72057594194968577
 sensor.wallswitch_apartment_alarm_level:
+  name:
   platform: zwave
   unique_id: 9-72057594194968593
 sensor.wallswitch_apartment_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 9-72057594194968609
 sensor.wallswitch_apartment_heat:
+  name:
   platform: zwave
   unique_id: 9-72057594194968689
 sensor.wallswitch_apartment_power_management:
+  name:
   platform: zwave
   unique_id: 9-72057594194968753
 switch.switch_4:
+  name:
   platform: zwave
   unique_id: 10-72057594210500608
 sensor.unknown_4:
+  name:
   platform: zwave
   unique_id: 10-72057594210713602
 sensor.power:
+  name:
   platform: zwave
   unique_id: 10-72057594210697282
 sensor.fibaro_system_fgwpef_wall_plug_power_5:
+  name:
   platform: zwave
   unique_id: 10-72057594210713730
 sensor.fibaro_system_fgwpef_wall_plug_exporting_3:
+  name:
   platform: zwave
   unique_id: 10-72057594210714112
+sensor.us_air_quality_index:
+  name:
+  platform: airvisual
+  unique_id: stockholm,stockholm,sweden_aqi
+sensor.us_air_pollution_level:
+  name:
+  platform: airvisual
+  unique_id: stockholm,stockholm,sweden_pollution_level
+sensor.us_main_pollutant:
+  name:
+  platform: airvisual
+  unique_id: stockholm,stockholm,sweden_main_pollutant
+media_player.sofo:
+  name:
+  platform: cast
+  unique_id: 635b629b-69aa-81ce-871c-3eb6d8e3542b

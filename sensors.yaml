@@ -141,7 +141,20 @@
     - sensor.multisensor_6_temperature
 #    - sensor.fibaro_eye_temperature
     - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-- platform: waqi
-  token: !secret waqi_token
-  locations:
-    - !secret waqi_locations
+#- platform: waqi
+#  token: !secret waqi_token
+#  locations:
+#    - !secret waqi_locations
+- platform: wunderground
+  api_key: 4fc7ee040fa97b5a
+  lang: SW
+  monitored_conditions:
+    - alerts
+    - observation_time
+    - precip_today_metric
+    - precip_today_string
+    - precip_1d_mm
+    - pressure_trend
+    - UV
+    - solarradiation
+
