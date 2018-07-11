@@ -210,9 +210,7 @@
       entity_id:
       - light.hue_bloom_tv
       - light.hue_iris
-#  - data:
       - brightness: 200
-
   alias: Lights on when state goes to Home and its dark
   condition:
   - below: '10'
@@ -223,3 +221,16 @@
   - entity_id: input_select.state
     platform: state
     to: Home
+- action:
+  - service: homeassistant.turn_off
+    entity_id: light.hue_bloom_tv
+  alias: tvlight off when tv off
+  condition:
+  - condition: state
+    entity_id: light.hue_bloom_tv
+    state: 'on'
+  id: '1531255657865'
+  trigger:
+  - entity_id: media_player.lg_55ea970w
+    platform: state
+    to: 'off'

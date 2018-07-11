@@ -150,6 +150,7 @@ hardware:
   view: true
   entities:
   - group.axon_7
+  - device_tracker.94652d431255
   - device_tracker.b0c554409486
   - device_tracker.0017882b9ca9
   - device_tracker.001c50217c6d

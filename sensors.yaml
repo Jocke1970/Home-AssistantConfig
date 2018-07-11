@@ -60,6 +60,7 @@
       friendly_name: "Hue Kitchen Battery"
       value_template: '{{ states.sensor.kitchen_motion_sensor.attributes.battery }}'
       unit_of_measurement: '%'
+#      device_class: battery
     hue_kitchen_light:
       friendly_name: "Hue Kitchen Light"
       value_template: '{{ states.sensor.kitchen_motion_sensor.attributes.lux| round(0) }}'
@@ -72,6 +73,7 @@
       friendly_name: "Hue Entré Battery"
       value_template: '{{ states.sensor.entre_motion_sensor.attributes.battery }}'
       unit_of_measurement: '%'
+#      device_class: battery
     hue_entre_light:
       friendly_name: "Hue Entré Light"
       value_template: '{{ states.sensor.entre_motion_sensor.attributes.lux| round(0) }}'
@@ -80,10 +82,12 @@
       friendly_name: "Fibaro Eye Battery"
       value_template: '{{ states.zwave.fibaro_eye.attributes.battery_level }}'
       unit_of_measurement: '%'
+#      device_class: battery
     fibaro_door_sensor_battery:
       friendly_name: "Fibaro Door Sensor Battery"
       value_template: '{{ states.zwave.fibaro_door_sensor.attributes.battery_level }}'
       unit_of_measurement: '%'
+#      device_class: battery
     indoor_min_temp:
       friendly_name: "Indoor Min Temp"
       value_template: '{{ states.sensor.max_sensor.attributes.min_value }}'
@@ -92,34 +96,6 @@
       friendly_name: "Indoor Average Temp"
       value_template: '{{ states.sensor.max_sensor.attributes.mean }}'
       unit_of_measurement: '°C'
-    axon_7_battery:
-      friendly_name: "Axon 7 Battery"
-      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.battery }}'
-      unit_of_measurement: '%'
-      icon_template: >
-        {% set battery_level = states.device_tracker.phtagadc_joachim.attributes.battery | default(0) | int %}
-        {% set battery_round = (battery_level / 10) |int * 10 %}
-        {% if battery_round >= 100 %}
-          mdi:battery
-        {% elif battery_round > 0 %}
-          mdi:battery-{{ battery_round }}
-        {% else %}
-          mdi:battery-alert
-        {% endif %}
- 
-    axon_7_accuracy:
-      friendly_name: "Axon 7 Accuracy"
-      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.gps_accuracy }}'
-      unit_of_measurement: 'm'
-    axon_7_latitude:
-      friendly_name: "Axon 7 Latitude"
-      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.latitude }}'
-      unit_of_measurement: '°'
-    axon_7_longitude:
-      friendly_name: "Axon 7 Longitude"
-      value_template: '{{ states.device_tracker.phtagadc_joachim.attributes.longitude }}'
-      unit_of_measurement: '°'
-
 
 - platform: season
   type: astronomical
